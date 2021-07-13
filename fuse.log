@@ -1,0 +1,26 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o P:/CA/CAProject/Sorter_isim_beh.exe -prj P:/CA/CAProject/Sorter_beh.prj work.Sorter 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 12
+Turning on mult-threading, number of parallel sub-compilation jobs: 24 
+Determining compilation order of HDL files
+Parsing VHDL file "P:/CA/CAProject/Sorter.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package types
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture behavioral of entity Mem [mem_default]
+Compiling architecture behavioral of entity Controller [controller_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity clock [clock_default]
+Compiling architecture behavioral of entity WB_Sub [wb_sub_default]
+Compiling architecture behavioral of entity sorter
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 17 VHDL Units
+Built simulation executable P:/CA/CAProject/Sorter_isim_beh.exe
+Fuse Memory Usage: 36892 KB
+Fuse CPU Usage: 530 ms

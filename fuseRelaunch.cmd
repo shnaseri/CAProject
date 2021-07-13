@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "P:/CA/CAProject/Sorter_isim_beh.exe" -prj "P:/CA/CAProject/Sorter_beh.prj" "work.Sorter" 

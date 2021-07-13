@@ -1,0 +1,13 @@
+EN clock NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl09 1626162371
+EN wb_sub NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl07 1626162369
+EN mem NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl01 1626162363
+AR clock behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl12 1626162372
+EN sorter NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl10 1626162373
+AR mem behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl02 1626162364
+AR wb_sub behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl08 1626162370
+PH types NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl00 1626162362
+AR alu behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl04 1626162366
+EN controller NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl05 1626162367
+AR sorter behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl11 1626162374
+AR controller behavioral P:/CA/CAProject/Sorter.vhd sub00/vhpl06 1626162368
+EN alu NULL P:/CA/CAProject/Sorter.vhd sub00/vhpl03 1626162365

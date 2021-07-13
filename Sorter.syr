@@ -1,0 +1,301 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> Reading design: Sorter.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Sorter.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Sorter"
+Output Format                      : NGC
+Target Device                      : xc3s400-4-pq208
+
+---- Source Options
+Top Module Name                    : Sorter
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "P:/CA/CAProject/Sorter.vhd" in Library work.
+Architecture behavioral of Entity mem is up to date.
+Architecture behavioral of Entity alu is up to date.
+Architecture behavioral of Entity controller is up to date.
+Architecture behavioral of Entity wb_sub is up to date.
+WARNING:HDLParsers:1406 - "P:/CA/CAProject/Sorter.vhd" Line 178. No sensitivity list and no wait in the process
+Architecture behavioral of Entity clock is up to date.
+Architecture behavioral of Entity sorter is up to date.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <Sorter> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <Mem> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <Controller> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <ALU> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <clock> in library <work> (architecture <Behavioral>).
+
+Analyzing hierarchy for entity <WB_Sub> in library <work> (architecture <Behavioral>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <Sorter> in library <work> (Architecture <behavioral>).
+Entity <Sorter> analyzed. Unit <Sorter> generated.
+
+Analyzing Entity <Mem> in library <work> (Architecture <Behavioral>).
+Entity <Mem> analyzed. Unit <Mem> generated.
+
+Analyzing Entity <Controller> in library <work> (Architecture <Behavioral>).
+Entity <Controller> analyzed. Unit <Controller> generated.
+
+Analyzing Entity <ALU> in library <work> (Architecture <Behavioral>).
+Entity <ALU> analyzed. Unit <ALU> generated.
+
+Analyzing Entity <clock> in library <work> (Architecture <Behavioral>).
+Entity <clock> analyzed. Unit <clock> generated.
+
+Analyzing Entity <WB_Sub> in library <work> (Architecture <Behavioral>).
+Entity <WB_Sub> analyzed. Unit <WB_Sub> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <Mem>.
+    Related source file is "P:/CA/CAProject/Sorter.vhd".
+WARNING:Xst:647 - Input <write_control> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <input_data> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:646 - Signal <temp> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <output_cell<9>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<8>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<7>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<6>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<63>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<62>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<61>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<60>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<5>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<59>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<58>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<57>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<56>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<55>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<54>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<53>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<52>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<51>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<50>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<4>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<49>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<48>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<47>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<46>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<45>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<44>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<43>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<42>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<41>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<40>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<3>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<39>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<38>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<37>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<36>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<35>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<34>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<33>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<32>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<31>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<30>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<2>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<29>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<28>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<27>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<26>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<25>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<24>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<23>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<22>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<21>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<20>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<1>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<19>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<18>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<17>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<16>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<15>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<14>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<13>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<12>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<11>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<10>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <output_cell<0>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<9>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<8>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<7>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<6>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<63>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<62>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<61>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<60>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<5>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<59>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<58>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<57>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<56>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<55>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<54>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<53>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<52>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<51>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<50>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<4>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<49>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<48>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<47>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<46>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<45>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<44>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<43>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<42>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<41>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<40>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<3>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<39>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<38>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<37>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<36>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<35>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<34>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<33>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<32>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<31>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<30>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<2>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<29>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<28>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<27>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<26>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<25>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<24>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<23>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<22>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<21>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<20>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<1>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<19>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<18>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<17>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<16>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<15>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<14>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<13>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<12>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<11>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<10>> is used but never assigned. Tied to default value.
+WARNING:Xst:1781 - Signal <input_cell<0>> is used but never assigned. Tied to default value.
+ERROR:Xst:2073 - Unexpected use of shared variable <input_cell<12>>.
+--> 
+
+Total memory usage is 4497872 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :  132 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
