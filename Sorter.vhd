@@ -36,8 +36,10 @@ entity Mem is
 	Port(
 		input_index : in std_logic_vector(3 downto 0) := (others => '0');
 		input_data : in number_bus;
+		input_compelte_mem : std_logic;
 		out_control, write_control : in std_logic_vector(1 downto 0);
-		output : out number_bus
+		output : out number_bus;
+		output_compelte_mem : std_logic
 	);
 end Mem;
 
@@ -45,6 +47,7 @@ architecture Behavioral of Mem is
 shared variable input_cell : cell  := (others => (others => "1011"));
 shared variable output_cell : cell  := (others => (others => "0000"));
 shared variable temp : number_bus;
+shared variable  input_wb_changed : std_logic_vector(63 downto 0);
 begin
 	process(input_index, input_data,out_control , write_control)
 		begin
@@ -85,10 +88,12 @@ entity ALU is
 			input : in number_bus;
 			input_wb_index : in std_logic_vector(3 downto 0);
 			input_wb_changed : in std_logic_vector(63 downto 0);
+			input_complete :  in std_logic_vector(63 downto 0);
 			control : in std_logic;
 			output_mem : out number_bus;
 			output_wb_index : out std_logic_vector(3 downto 0);
-			output_wb_changed : out std_logic_vector(63 downto 0)
+			output_wb_changed : out std_logic_vector(63 downto 0);
+			output_complete :  out std_logic_vector(63 downto 0);
 	);
 end ALU;
 
@@ -103,23 +108,45 @@ begin
 			if control = '1' then
 				minimum  := "1111";
 				for i in 0 to 63 loop
-					if input(i) < minimum then
+					if input(i) < minimum and input_wb_changed(i) = '1' and input_complete(i) = '0' then
 						minimum := input(i);
 					end if;
 				end loop;
 				for i in 0 to 63 loop
-					if input(i) = minimum then
-						if input_wb_changed(i) = '1'  then
-							output_temp(i) := input(i) - minimum;
-							end if;
+					if input_complete(i) = '1' then
+						next;
 					end if;
+					if input_wb_changed(i) = '1'  then
+						output_temp(i) := input(i) - minimum;
+						end if;
+					if output_temp(i) /= "0000" then
+						input_wb_changed(i) := '0';
+						end if;
 				end loop;
 			else
 				for i in 0 to 63 loop
+					if input_complete(i) = '1' then
+						next;
+					end if;
 					output_temp(i) := output_temp(i) + minimum;
 				end loop;
 			end if;
+			
+			
+			if index = "0000" then 
+				for i in 0 to 63 loop 
+					if input_wb_changed(i) = '1' then 
+						output_complete(i) = '1';
+					end if;
+				end loop;
+				index := "1111";
+			else 
+						index := input_wb_index - 1;
+			end if;
+		
 			output_mem <= output_temp;
+			output_wb_index <= index;
+			output_wb_changed <= input_wb_changed;
 		end process;
 end Behavioral;
 
@@ -132,7 +159,7 @@ entity Controller is
 	Port(
 			clock : in std_logic := '1';
 			output_ALU : out std_logic := '1';
-			output_write : out std_logic_vector(1 downto 0) := '00';
+			output_write : out std_logic_vector(1 downto 0) := "00";
 			output_out : out std_logic := '1'
 	);
 end Controller;
@@ -177,6 +204,7 @@ use work.types.all;
 
 entity clock is
 	Port(
+	
 		clock : out std_logic := '1'
 	);
 end clock;
@@ -199,6 +227,11 @@ use IEEE.NUMERIC_STD.ALL;
 use work.types.all;
 
 entity Sorter is
+
+	Port(
+		input_data : in number;
+		output_data : out cell;
+	);
 end Sorter;
 
 architecture Behavioral of Sorter is
@@ -214,7 +247,8 @@ begin
 		input_data => input_signal,
 		write_control => Mem_write_signal,
 		out_control => Mem_out_signal,
-		output => output_signal
+		output => output_signal,
+		
 	);
 	
 	C1: entity work.Controller port map(
