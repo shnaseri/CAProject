@@ -1,0 +1,2 @@
+vhdl work "Sorter.vhd"
+vhdl work "sorter_test_bench5.vhd"

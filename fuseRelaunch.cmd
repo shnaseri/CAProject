@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "P:/CA/CAProject/Sorter_isim_beh.exe" -prj "P:/CA/CAProject/Sorter_beh.prj" "work.Sorter" 
+-intstyle "ise" -incremental -o "D:/UNI/term_4/CA/CAProject - Copy/sorter_test_bench5_isim_beh.exe" -prj "D:/UNI/term_4/CA/CAProject - Copy/sorter_test_bench5_beh.prj" "work.sorter_test_bench5" 
